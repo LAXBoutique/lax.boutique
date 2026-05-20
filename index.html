@@ -3,9 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Shop elevated, curated fashion pieces inspired by Los Angeles. Discover jewelry, handbags, accessories & new arrivals at LAX Boutique." />
+<meta name="theme-color" content="#f8f5f2" />
+<meta property="og:title" content="LAX Boutique - Elevated Style" />
+<meta property="og:description" content="Chic, curated, and timeless fashion inspired by Los Angeles." />
+<meta property="og:type" content="website" />
 
-<title>LAX Boutique</title>
+<title>LAX Boutique - Elevated Fashion & Accessories</title>
 
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -15,6 +21,10 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -36,6 +46,14 @@ a{
     letter-spacing:2px;
 }
 
+header{
+    background:white;
+    box-shadow:0 2px 4px rgba(0,0,0,0.05);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
 nav{
     background:white;
     display:flex;
@@ -51,18 +69,64 @@ nav{
     letter-spacing:2px;
 }
 
+.nav-links a{
+    position:relative;
+    transition:color 0.3s ease;
+}
+
+.nav-links a:hover{
+    color:#8b7355;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:1px;
+    bottom:-5px;
+    left:0;
+    background:#8b7355;
+    transition:width 0.3s ease;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
 .logo{
     text-align:center;
+    flex-shrink:0;
 }
 
 .logo img{
     width:280px;
+    height:auto;
+    display:block;
 }
 
 .icons{
     display:flex;
     gap:20px;
     font-size:20px;
+}
+
+.icon-btn{
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-size:20px;
+    padding:8px;
+    border-radius:4px;
+    transition:background 0.3s ease;
+}
+
+.icon-btn:hover{
+    background:rgba(0,0,0,0.05);
+}
+
+.icon-btn:focus{
+    outline:2px solid #8b7355;
+    outline-offset:2px;
 }
 
 .hero{
@@ -85,6 +149,7 @@ nav{
     letter-spacing:3px;
     font-size:12px;
     margin-bottom:20px;
+    text-transform:uppercase;
 }
 
 .hero h1{
@@ -107,11 +172,22 @@ nav{
     padding:18px 40px;
     letter-spacing:2px;
     font-size:13px;
-    transition:.3s;
+    transition:all 0.3s ease;
+    border:2px solid #e6d8ca;
+    cursor:pointer;
+    text-transform:uppercase;
 }
 
 .shop-btn:hover{
     background:#d8c6b4;
+    border-color:#d8c6b4;
+    transform:translateY(-2px);
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.shop-btn:focus{
+    outline:2px solid #8b7355;
+    outline-offset:2px;
 }
 
 .section-title{
@@ -121,6 +197,7 @@ nav{
     font-family:'Cormorant Garamond', serif;
     font-size:42px;
     letter-spacing:3px;
+    text-transform:uppercase;
 }
 
 .products{
@@ -132,12 +209,18 @@ nav{
 
 .product{
     text-align:center;
+    transition:transform 0.3s ease;
 }
 
-.product img{
+.product:hover{
+    transform:translateY(-8px);
+}
+
+.product-image{
     width:100%;
     height:320px;
     object-fit:cover;
+    display:block;
 }
 
 .product h3{
@@ -151,6 +234,7 @@ nav{
     margin-top:10px;
     letter-spacing:2px;
     font-size:12px;
+    text-transform:uppercase;
 }
 
 .about{
@@ -162,10 +246,11 @@ nav{
     background:white;
 }
 
-.about img{
+.about-image{
     width:100%;
     height:500px;
     object-fit:cover;
+    display:block;
 }
 
 .about-text h2{
@@ -178,6 +263,11 @@ nav{
     line-height:1.8;
     color:#555;
     margin-bottom:30px;
+    font-size:15px;
+}
+
+main{
+    min-height:calc(100vh - 200px);
 }
 
 footer{
@@ -185,11 +275,14 @@ footer{
     padding:60px 40px;
     text-align:center;
     margin-top:50px;
+    border-top:1px solid #e8dfd7;
 }
 
 footer img{
     width:180px;
+    height:auto;
     margin-bottom:20px;
+    display:block;
 }
 
 footer p{
@@ -198,18 +291,37 @@ footer p{
     color:#666;
 }
 
+footer a{
+    color:#8b7355;
+    transition:color 0.3s ease;
+}
+
+footer a:hover{
+    color:#111;
+}
+
 @media(max-width:900px){
 
 nav{
-    padding:25px;
+    padding:20px 40px;
+}
+
+.logo img{
+    width:220px;
+}
+
+.nav-links{
+    gap:25px;
 }
 
 .products{
     grid-template-columns:1fr 1fr;
+    padding:0 40px 80px;
 }
 
 .hero{
     padding:40px;
+    height:80vh;
 }
 
 .hero h1{
@@ -218,27 +330,73 @@ nav{
 
 .about{
     grid-template-columns:1fr;
+    padding:40px;
+    gap:40px;
+}
+
+.about-image{
+    height:400px;
 }
 
 }
 
 @media(max-width:600px){
 
-.products{
-    grid-template-columns:1fr;
+nav{
+    padding:15px 20px;
+    flex-direction:column;
+    gap:20px;
 }
 
 .nav-links{
     gap:15px;
     font-size:11px;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
 .logo img{
     width:170px;
 }
 
+.products{
+    grid-template-columns:1fr;
+    padding:0 20px 60px;
+}
+
+.hero{
+    padding:20px;
+    height:70vh;
+}
+
 .hero h1{
     font-size:42px;
+}
+
+.section-title{
+    font-size:28px;
+    padding-top:40px;
+    margin-bottom:30px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.about{
+    padding:30px 20px;
+}
+
+.about-image{
+    height:300px;
+}
+
+.about-text h2{
+    font-size:36px;
+}
+
+footer{
+    padding:40px 20px;
 }
 
 }
@@ -248,108 +406,128 @@ nav{
 
 <body>
 
-<div class="top-bar">
+<div class="top-bar" role="status" aria-live="polite">
 FREE SHIPPING ON ORDERS OVER $20
 </div>
 
-<nav>
-
+<header>
+<nav role="navigation" aria-label="Main navigation">
 <div class="nav-links">
-<a href="#">HOME</a>
-<a href="#">SHOP</a>
-<a href="#">ABOUT</a>
-<a href="#">CONTACT</a>
+<a href="#home">HOME</a>
+<a href="#shop">SHOP</a>
+<a href="#about">ABOUT</a>
+<a href="#contact">CONTACT</a>
 </div>
 
 <div class="logo">
-<img src="logo.png" alt="LAX Boutique Logo">
+<img src="logo.png" alt="LAX Boutique - Elevated Fashion" width="280" height="auto">
 </div>
 
 <div class="icons">
-<span>♡</span>
-<span>🛒</span>
+<button class="icon-btn" aria-label="Add to wishlist" title="Add to wishlist">♡</button>
+<button class="icon-btn" aria-label="Shopping cart" title="Shopping cart">🛒</button>
 </div>
-
 </nav>
+</header>
 
-<section class="hero">
+<main>
 
+<section class="hero" id="home" aria-label="Hero section">
 <div class="hero-content">
-
-<div class="small-text">
-CHIC. CURATED. TIMELESS.
+<div class="small-text">CHIC. CURATED. TIMELESS.</div>
+<h1>ELEVATED<br>STYLE.</h1>
+<p>Inspired by Los Angeles.</p>
+<a href="#shop" class="shop-btn">SHOP NOW</a>
 </div>
-
-<h1>
-ELEVATED<br>STYLE.
-</h1>
-
-<p>
-Inspired by Los Angeles.
-</p>
-
-<a href="#" class="shop-btn">SHOP NOW</a>
-
-</div>
-
 </section>
 
-<h2 class="section-title">SHOP THE COLLECTION</h2>
+<h2 class="section-title" id="shop">SHOP THE COLLECTION</h2>
 
-<section class="products">
+<section class="products" aria-label="Product categories">
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=800&auto=format&fit=crop">
+<article class="product">
+<img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=800&auto=format&fit=crop" 
+     alt="Gold jewelry collection - elegant necklaces and rings" 
+     class="product-image"
+     loading="lazy"
+     width="400"
+     height="320">
 <h3>Jewelry</h3>
 <p>SHOP NOW</p>
-</div>
+</article>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800&auto=format&fit=crop">
+<article class="product">
+<img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800&auto=format&fit=crop" 
+     alt="Premium leather handbags in various styles" 
+     class="product-image"
+     loading="lazy"
+     width="400"
+     height="320">
 <h3>Handbags</h3>
 <p>SHOP NOW</p>
-</div>
+</article>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=800&auto=format&fit=crop">
+<article class="product">
+<img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=800&auto=format&fit=crop" 
+     alt="Stylish accessories including sunglasses and scarves" 
+     class="product-image"
+     loading="lazy"
+     width="400"
+     height="320">
 <h3>Accessories</h3>
 <p>SHOP NOW</p>
-</div>
+</article>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop">
+<article class="product">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop" 
+     alt="New arrivals - latest fashion pieces and collections" 
+     class="product-image"
+     loading="lazy"
+     width="400"
+     height="320">
 <h3>New Arrivals</h3>
 <p>SHOP NOW</p>
-</div>
+</article>
 
 </section>
 
-<section class="about">
+<section class="about" id="about" aria-label="About LAX Boutique">
 
-<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200&auto=format&fit=crop" 
+     alt="LAX Boutique founder styling a curated fashion look" 
+     class="about-image"
+     width="600"
+     height="500">
 
 <div class="about-text">
-
 <h2>About LAX Boutique</h2>
 
 <p>
 LAX Boutique brings trendy, elevated pieces to your everyday style.
 Inspired by the effortless beauty of Los Angeles, we focus on quality,
-simplicity, and statement looks.
+simplicity, and statement looks. Every piece in our collection is carefully 
+curated to help you express your unique style with confidence.
 </p>
 
 <a href="#" class="shop-btn">LEARN MORE</a>
-
 </div>
 
 </section>
 
-<footer>
+</main>
 
-<img src="logo.png" alt="LAX Boutique Logo">
+<footer id="contact" role="contentinfo">
+
+<img src="logo.png" alt="LAX Boutique" width="180" height="auto">
 
 <p>
 © 2026 LAX BOUTIQUE • ALL RIGHTS RESERVED
+</p>
+
+<p style="margin-top:20px; font-size:11px;">
+<a href="#">Privacy Policy</a> • 
+<a href="#">Terms of Service</a> • 
+<a href="#">Contact Us</a>
 </p>
 
 </footer>
