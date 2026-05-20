@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Shop elevated, curated fashion pieces inspired by Los Angeles. Discover jewelry, handbags, accessories & new arrivals at LAX Boutique." />
-<meta name="theme-color" content="#f8f5f2" />
+<meta name="theme-color" content="#faf7f5" />
 <meta property="og:title" content="LAX Boutique - Elevated Style" />
 <meta property="og:description" content="Chic, curated, and timeless fashion inspired by Los Angeles." />
 <meta property="og:type" content="website" />
@@ -28,34 +28,35 @@ html{
 }
 
 body{
-    background:#f8f5f2;
-    color:#111;
+    background:#faf7f5;
+    color:#4a3f3d;
     font-family:'Montserrat', sans-serif;
 }
 
 a{
     text-decoration:none;
-    color:black;
+    color:#4a3f3d;
 }
 
 .top-bar{
-    background:#e8dfd7;
+    background:linear-gradient(135deg, #f4d9d0 0%, #f9e8e3 100%);
     text-align:center;
     padding:12px;
     font-size:12px;
     letter-spacing:2px;
+    color:#6b5652;
 }
 
 header{
-    background:white;
-    box-shadow:0 2px 4px rgba(0,0,0,0.05);
+    background:#faf7f5;
+    box-shadow:0 2px 8px rgba(232, 180, 163, 0.08);
     position:sticky;
     top:0;
     z-index:100;
 }
 
 nav{
-    background:white;
+    background:#faf7f5;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -67,25 +68,27 @@ nav{
     gap:40px;
     font-size:13px;
     letter-spacing:2px;
+    color:#6b5652;
 }
 
 .nav-links a{
     position:relative;
     transition:color 0.3s ease;
+    color:#6b5652;
 }
 
 .nav-links a:hover{
-    color:#8b7355;
+    color:#d4a5a0;
 }
 
 .nav-links a::after{
     content:'';
     position:absolute;
     width:0;
-    height:1px;
+    height:2px;
     bottom:-5px;
     left:0;
-    background:#8b7355;
+    background:linear-gradient(135deg, #e8b4a3 0%, #d4a5a0 100%);
     transition:width 0.3s ease;
 }
 
@@ -117,22 +120,24 @@ nav{
     font-size:20px;
     padding:8px;
     border-radius:4px;
-    transition:background 0.3s ease;
+    transition:all 0.3s ease;
+    color:#d4a5a0;
 }
 
 .icon-btn:hover{
-    background:rgba(0,0,0,0.05);
+    background:rgba(232, 180, 163, 0.1);
+    color:#c0918c;
 }
 
 .icon-btn:focus{
-    outline:2px solid #8b7355;
+    outline:2px solid #d4a5a0;
     outline-offset:2px;
 }
 
 .hero{
     height:90vh;
     background:
-    linear-gradient(rgba(248,245,242,.45), rgba(248,245,242,.45)),
+    linear-gradient(rgba(250, 247, 245, 0.5), rgba(250, 247, 245, 0.5)),
     url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=2070&auto=format&fit=crop');
     background-size:cover;
     background-position:center;
@@ -150,6 +155,7 @@ nav{
     font-size:12px;
     margin-bottom:20px;
     text-transform:uppercase;
+    color:#b8998d;
 }
 
 .hero h1{
@@ -158,35 +164,40 @@ nav{
     font-weight:500;
     line-height:0.9;
     margin-bottom:20px;
+    color:#4a3f3d;
 }
 
 .hero p{
     font-size:22px;
     font-family:'Cormorant Garamond', serif;
     margin-bottom:35px;
+    color:#6b5652;
 }
 
 .shop-btn{
     display:inline-block;
-    background:#e6d8ca;
+    background:linear-gradient(135deg, #e8b4a3 0%, #d4a5a0 100%);
     padding:18px 40px;
     letter-spacing:2px;
     font-size:13px;
     transition:all 0.3s ease;
-    border:2px solid #e6d8ca;
+    border:2px solid #d4a5a0;
     cursor:pointer;
     text-transform:uppercase;
+    color:#fff;
+    font-weight:500;
+    box-shadow:0 4px 15px rgba(232, 180, 163, 0.2);
 }
 
 .shop-btn:hover{
-    background:#d8c6b4;
-    border-color:#d8c6b4;
-    transform:translateY(-2px);
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    background:linear-gradient(135deg, #d4a5a0 0%, #c0918c 100%);
+    border-color:#c0918c;
+    transform:translateY(-3px);
+    box-shadow:0 6px 20px rgba(212, 165, 160, 0.3);
 }
 
 .shop-btn:focus{
-    outline:2px solid #8b7355;
+    outline:2px solid #d4a5a0;
     outline-offset:2px;
 }
 
@@ -198,6 +209,7 @@ nav{
     font-size:42px;
     letter-spacing:3px;
     text-transform:uppercase;
+    color:#4a3f3d;
 }
 
 .products{
@@ -221,6 +233,13 @@ nav{
     height:320px;
     object-fit:cover;
     display:block;
+    border-radius:4px;
+    box-shadow:0 8px 20px rgba(232, 180, 163, 0.15);
+    transition:box-shadow 0.3s ease;
+}
+
+.product:hover .product-image{
+    box-shadow:0 12px 30px rgba(212, 165, 160, 0.25);
 }
 
 .product h3{
@@ -228,6 +247,7 @@ nav{
     font-family:'Cormorant Garamond', serif;
     font-size:30px;
     font-weight:500;
+    color:#4a3f3d;
 }
 
 .product p{
@@ -235,6 +255,7 @@ nav{
     letter-spacing:2px;
     font-size:12px;
     text-transform:uppercase;
+    color:#b8998d;
 }
 
 .about{
@@ -243,7 +264,7 @@ nav{
     gap:60px;
     align-items:center;
     padding:80px;
-    background:white;
+    background:linear-gradient(135deg, #faf7f5 0%, #f4ede8 100%);
 }
 
 .about-image{
@@ -251,17 +272,20 @@ nav{
     height:500px;
     object-fit:cover;
     display:block;
+    border-radius:4px;
+    box-shadow:0 12px 30px rgba(232, 180, 163, 0.2);
 }
 
 .about-text h2{
     font-family:'Cormorant Garamond', serif;
     font-size:52px;
     margin-bottom:20px;
+    color:#4a3f3d;
 }
 
 .about-text p{
     line-height:1.8;
-    color:#555;
+    color:#6b5652;
     margin-bottom:30px;
     font-size:15px;
 }
@@ -271,11 +295,11 @@ main{
 }
 
 footer{
-    background:#f3ece6;
+    background:linear-gradient(135deg, #f4e0d8 0%, #f0d5cc 100%);
     padding:60px 40px;
     text-align:center;
     margin-top:50px;
-    border-top:1px solid #e8dfd7;
+    border-top:1px solid #e8b4a3;
 }
 
 footer img{
@@ -288,16 +312,16 @@ footer img{
 footer p{
     font-size:12px;
     letter-spacing:2px;
-    color:#666;
+    color:#6b5652;
 }
 
 footer a{
-    color:#8b7355;
+    color:#d4a5a0;
     transition:color 0.3s ease;
 }
 
 footer a:hover{
-    color:#111;
+    color:#c0918c;
 }
 
 @media(max-width:900px){
